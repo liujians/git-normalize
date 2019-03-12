@@ -13,3 +13,7 @@ gitignore中忽略`.commitMessage`文件
 具体文档:
 
 [https://www.yuque.com/liujians/doc/nq0s4l#064a7cb3](https://www.yuque.com/liujians/doc/nq0s4l#064a7cb3)
+
+步骤：
+
+fork项目 ——> git add . ——> yarn commit ——> git push
