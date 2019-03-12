@@ -2,6 +2,9 @@
   "name": "git-normalize",
   "version": "1.0.0",
   "description": "liujians的git工作流",
+  "bin": {
+    "git-normalize": "index.js"
+  },
   "main": "commit.config.js",
   "scripts": {
     "lint-staged": "lint-staged",
@@ -56,5 +59,11 @@
     "commitizen": {
       "path": "./commit.config.js"
     }
+  },
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "edit-json-file": "^1.2.1",
+    "shelljs": "^0.8.3",
+    "yargs": "^13.2.2"
   }
 }

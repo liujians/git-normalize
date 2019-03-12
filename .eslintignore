@@ -1,4 +1,6 @@
 /functions/mock/**
 /scripts
 /config
+/cmds
 *.config.js
+index.js

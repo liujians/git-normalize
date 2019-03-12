@@ -16,4 +16,4 @@ gitignore中忽略`.commitMessage`文件
 
 步骤：
 
-fork项目 ——> git add . ——> yarn commit ——> git push
+> yarn global add git-normalize
