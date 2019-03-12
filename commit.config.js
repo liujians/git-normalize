@@ -1,4 +1,5 @@
 var inquirer = require('inquirer');
+var fs = require('fs');
 var prompt = inquirer.createPromptModule();
 var question = [
   {
@@ -40,7 +41,7 @@ var question = [
     validate: (value = '') => (!String(value) ? false : true),
   },
 ];
-let emojiEnum = {
+let emojiGithubEnum = {
   add: ':star:',
   update: ':sparkles:',
   fix: ':wrench:',
@@ -48,11 +49,20 @@ let emojiEnum = {
   hotfix: ':hammer:',
   init: ':new:',
 };
+let emojiGitlabEnum = {
+  add: '⭐️',
+  update: '✨',
+  fix: '🔧',
+  remove: '🚫',
+  hotfix: '🔨',
+  init: '🆕',
+};
 module.exports = {
   prompter: function(cz, commit) {
     prompt(question).then(function(answers) {
       var message =
-        answers.type + emojiEnum[answers.type.match(/[0-9a-z]+/gi)[0]] + answers.message;
+        answers.type + emojiGitlabEnum[answers.type.match(/[0-9a-z]+/gi)[0]] + answers.message;
+      fs.writeFile('./.commitMessage', answers.message);
       commit(message);
     });
   },
