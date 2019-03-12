@@ -8,7 +8,7 @@ liujians的git提交规范说明
 
 gitignore中忽略`.commitMessage`文件
 
-`.commitMessage`中用于保存上次commit的message信息，防止报错的时候还要重新填写
+`.commitMessage`中用于保存上次commit的message信息，防止报错的时候还要重新填写，会在填写时自动读取，不需要复制
 
 具体文档:
 

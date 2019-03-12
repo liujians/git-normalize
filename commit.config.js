@@ -1,6 +1,10 @@
 var inquirer = require('inquirer');
 var fs = require('fs');
 var prompt = inquirer.createPromptModule();
+var str;
+if (fs.existsSync('./.commitMessage')) {
+  str = fs.readFileSync('./.commitMessage');
+}
 var question = [
   {
     type: 'list',
@@ -38,6 +42,7 @@ var question = [
     type: 'input',
     name: 'message',
     message: '请输入提交注释',
+    default: str || '',
     validate: (value = '') => (!String(value) ? false : true),
   },
 ];
