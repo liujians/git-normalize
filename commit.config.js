@@ -67,7 +67,9 @@ module.exports = {
     prompt(question).then(function(answers) {
       var message =
         answers.type + emojiGitlabEnum[answers.type.match(/[0-9a-z]+/gi)[0]] + answers.message;
-      fs.writeFile('./.commitMessage', answers.message);
+      fs.writeFile('./.commitMessage', answers.message, function(err) {
+        console.log(err);
+      });
       commit(message);
     });
   },
