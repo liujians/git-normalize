@@ -1,6 +1,6 @@
 {
   "name": "git-normalize",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "liujians的git工作流",
   "bin": {
     "git-normalize": "index.js"
