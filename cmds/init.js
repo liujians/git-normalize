@@ -29,6 +29,11 @@ exports.handler = async argv => {
   } else {
     shell.echo(chalk.red('已存在commit.config.js'));
   }
+  if (!fs.existsSync('./.commitlintrc.js')) {
+    task.push(root + '.commitlintrc.js');
+  } else {
+    shell.echo(chalk.red('已存在.commitlintrc.js'));
+  }
   if (!fs.existsSync('./.eslintignore')) {
     task.push(root + '.eslintignore');
   } else {
